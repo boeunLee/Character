@@ -1,0 +1,222 @@
+body{
+    background: #fff;
+}
+@keyframes ModapiMoving{
+    0%{
+        transform: translate(-20%) rotate(0deg) scale(2);
+    }
+    50%{
+        transform: translate(30%) rotate(10deg) scale(1);
+    }
+    to{
+        transform: translate(10%) rotate(20deg) scale(0.5);
+    }
+}
+
+@keyframes LeafMoving{
+    0%{
+        transform: rotateX(30deg);
+    }
+    to{
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes FaceChange{
+    0%{
+        background: #ECF033;
+    }
+    100%{
+        background: #F03333;
+    }
+}
+
+@keyframes EyesMoving{
+    0%{
+        transform: scale(2);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes mouthMoving {
+	0% {
+		width: 65%;
+		height: 65%;
+	}
+	30% {
+		width: 50%;
+		height:50%;
+	}
+    50%{
+        width: 30%;
+        height: 30%;
+    }
+	70% {
+		width: 40%;
+		height: 40%;
+	}
+	to {
+		width: 20%;
+        height: 20%;
+	}
+}
+@keyframes cheekMoving {
+	to {
+		transform: scale(1.4);
+	}
+}
+@keyframes BodyMoving{
+    0% {
+		transform: translate(-50%) rotate(0deg) scale(1);
+	}
+	25% {
+		transform: translate(-50%) rotate(0deg) scale(1);
+	}
+	50% {
+		transform: translate(-50%) rotate(-10deg) scale(1);
+	}
+	80% {
+		transform: translate(-50%) rotate(10deg) scale(1);
+	}
+	to {
+		transform: translate(-50%) rotate(-20deg) scale(1.2);
+	}
+}
+
+.modapi{
+    animation: ModapiMoving 2s infinite alternate;
+    position: relative;
+    margin:50px auto;
+    width: 800px;
+    height: 800px;
+    /* top: 50%;
+	left: 50%;
+	transform: translate(-50%); */
+    /* background-size: contain; */
+}
+.leaf{
+    animation: LeafMoving 1s infinite alternate;
+    width: 100px;
+    position: absolute;
+    top: 20%;
+    left: -30%;
+    transform: translate(-50%, -50%);
+}
+
+.face{
+    animation: FaceChange 3s infinite reverse;
+    width: 400px;
+	height: 500px;
+	border-radius: 50%;
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* overflow: hidden; */
+    border:3px solid #000;
+    background: #ECF033;
+}
+
+.face .eye {
+    animation: EyesMoving 2s linear alternate;
+    width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: #000;
+    position: absolute;
+	top: 30%;
+}
+
+/* .face .eye::before {
+	opacity: 0;
+	content: "";
+	display: block;
+	width: 4px;
+	height: 12px;
+	background-color: red;
+	margin: 0 auto;
+	border-radius: 50%;
+	animation: eyeOpacity 2s ease infinite alternate;
+} */
+
+.face .eye.left{
+    /* animation: eyeLeftMoving 2s ease infinite alternate; */
+    left:30%;
+	/* transform: rotate(8deg); */
+}
+
+.face .eye.right{
+    /* animation: eyeRightMoving 2s ease infinite alternate; */
+    right:30%;
+	transform: rotate(-8deg);
+}
+.white-left,
+.white-right{
+    animation: EyesMoving 2s linear infinite alternate;
+    width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #fff;
+    position: absolute;
+	top: 10%;
+    left:60%;
+}
+
+.face .cheek {
+	width: 60px;
+	height: 20px;
+    border:3px solid #000;
+	border-radius: 50%;
+	background-color:pink;
+	position: absolute;
+	top: 40%;
+	z-index: 4;
+	animation: cheekMoving 0.4s ease infinite alternate;
+}
+
+.face .cheek.left {
+	left:10%;
+}
+
+.face .cheek.right {
+	right: 10%;
+}
+
+.face .mouth {
+	animation: mouthMoving 2s linear infinite alternate;
+	width: 200px;
+	height: 200px;
+	border-radius:50%;
+    /* #d7715f */
+	background-color: #cb93bf;
+	border: 3px solid #201D1D;;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.mouth .mouth-in{
+    animation: mouthMoving 2s linear infinite alternate;
+    width:130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color:#201D1D;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+    position: absolute;
+    top:20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.modapi-body{
+    animation: BodyMoving 2s linear infinite alternate;
+    width: 0;
+	height: 0;
+    position: absolute;
+    left:35%;
+    top:75%;
+
+}
